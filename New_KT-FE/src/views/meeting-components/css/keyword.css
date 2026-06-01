@@ -1,0 +1,75 @@
+/* keyword.css */
+
+#keywordPage {
+    font-family: 'GowunBatang-Regular';
+    font-weight: bold;
+}
+
+
+.note {
+    position: relative;
+    padding: 1.2em 1.5em;
+    margin: 2em auto;
+    color: 'black';
+    background: #6bc59c;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.note.orange {
+    background: #f39c12;
+}
+
+.note:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: #fff #fff #27ae60 #27ae60;
+    background: #27ae60;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
+    display: block;
+    width: 0;
+
+}
+
+.note.orange:before {
+    border-color: #fff #fff #e67e22 #e67e22;
+    background: #e67e22;
+}
+
+.divider
+{
+	position: relative;
+	margin-top: 40px;
+    margin-bottom: 40px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-stopper:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -6px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 12px;
+	background-color: #6bc59c;
+	border-left: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}

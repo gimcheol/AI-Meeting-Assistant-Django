@@ -1,0 +1,16 @@
+.calendar {
+    width: 70%;  /* 원하는 너비로 설정 */
+    height: 100%; /* 뷰포트 높이의 70%로 설정 */
+    margin: auto; /* 중앙 정렬 */
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.fc-day-sun a {
+    color: red;
+}
+  
+/* 토요일 날짜: 파란색 */
+.fc-day-sat a {
+    color: blue;
+}

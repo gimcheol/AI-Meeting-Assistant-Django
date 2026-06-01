@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'SunBatang-Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/SunBatang-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal, bold;
+    font-style: normal;
+}
+
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+/* body {
+    font-size: 16px;
+    font-family: 'GowunBatang-Regular', cursive;
+    background: #f9f9f9;
+} */
+#page{
+    font-size: 16px;
+    font-family: 'GowunBatang-Regular', cursive;
+    background: #f9f9f9;
+    
+    width: 1000px;
+    max-width: 100%;
+    margin: 3rem auto;
+    padding: 1rem;
+    background: #dcdcdc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.meeting-title {
+    font-family: 'GowunBatang-Regular', cursive;
+    margin-bottom: 6rem;
+    text-align: center;
+    color: black;
+}
+hr{
+    width: 50rem;
+    height: 1px;
+    max-width: 100%;
+    margin: 5rem auto;
+    border: none;
+    background-color: darkred;
+}
+
+
+/*** BLOCKQOUTES STYLES ***/
+
+.block1{
+    position: relative;
+    width: 50rem;
+    max-width: 100%;
+    margin: 0.1rem auto 1rem;
+    padding: 0.5rem 1rem;
+    line-height: 1.7;
+    font-size: 1.1em;
+    color: black;
+    background: #fff;
+    box-shadow: 0 5px 5px -4px rgba(0,0,0,0.5);
+    border-left: 6px solid darkred;
+    font-weight: bold;
+    
+    &::before, &::after{
+        position: absolute;
+        left: 0;
+        font-size: 1rem;
+        color: rgba(darkred, .6);
+}
+&::before{
+    top: -2rem;
+}
+&::after{
+    bottom: -2rem;
+}
+}
+
+.block2-author{
+    margin: 0;
+    padding: 0 1rem 2rem;
+    text-align: center;
+    color: darkred;
+&::before, &::after{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    vertical-align: middle;
+    background: darkred;
+}
+&::before{
+    margin-right: 0.5rem;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+&::after{
+    margin-left: 0.5rem;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+}
+.block2{
+    position: relative;
+    width: 40rem;
+    max-width: 100%;
+    margin: 0 auto 3rem;
+    padding: 1rem;
+    color: black;
+    line-height: 1.7;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 5px 5px -4px rgba(black, .5);
+&::before, &::after{
+    z-index: 1;
+    position: absolute;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    line-height: 32px;
+    font-family: 'FontAwesome';
+    font-size: 14px;
+    color: rgba(#fff, .9);
+    background: rgb(133, 127, 127);
+    border-radius: 50%;
+}
+&::before{
+    content:'\f10d';
+    left: -10px;
+}
+&::after{
+    content:'\f10e';
+    right: -10px;
+}
+}
+
+.fw-semibold {
+    font-weight: 600 !important;
+    margin-left: 20px;
+}

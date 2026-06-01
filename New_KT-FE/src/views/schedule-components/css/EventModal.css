@@ -1,0 +1,23 @@
+/* EventModal.css */
+.event-title-link {
+    color: initial; /* Set the initial color */
+    text-decoration: none; /* Remove default underline */
+    transition: color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.event-title-link:hover {
+    color: blue; /* Change color to blue on hover */
+}
+
+.keyword-item {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.keyword-item.selected {
+    font-weight: bold;
+}
+
+.keyword-item.hovered {
+    color: blue;
+}
