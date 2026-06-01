@@ -31,14 +31,36 @@
 ---
 
 ## 📂 4. 프로젝트 구조 (Directory Structure)
+
+본 프로젝트는 확장성과 유지보수성을 고려하여 **AI 모듈**, **Backend (Django)**, **Frontend** 영역을 독립적인 레이어로 분리하여 설계했습니다.
+
 ```text
-AI-Meeting-Assistant-Django/
-├── manage.py
-├── core/                  # Django 프로젝트 설정 폴더
-│   ├── settings.py
-│   └── urls.py
-├── meetings/              # 회의 관리 및 AI 연동 앱
-│   ├── views.py           # 요약 로직 및 API 호출 처리
-│   ├── models.py
-│   └── urls.py
-└── templates/             # 사용자 인터페이스 (HTML)
+AIMeetingAssistant/
+│
+├── AI/                     # 🤖 AI 핵심 로직 및 모델 연동 모듈
+│   └── (STT 및 OpenAI 요약 파이프라인 관련 스크립트)
+│
+├── New_KT-BE/              # ⚙️ Backend (Django Framework)
+│   ├── manage.py
+│   ├── core/               # 프로젝트 메인 설정 (settings.py, urls.py 등)
+│   └── meetings/           # 회의록 관리 및 AI API 호출 비즈니스 로직 앱
+│
+└── New_KT-FE/              # 💻 Frontend (사용자 웹 인터페이스)
+    ├── src/                # 컴포넌트 및 프론트엔드 소스코드
+    ├── public/             # 정적 자산 (Static Assets)
+    ├── package.json        # 종속성 관리 파일
+    └── README.md
+```
+
+## 🛠️ 5. 담당 역할 및 핵심 기여도 (Backend)
+본 프로젝트에서 저는 백엔드(Backend) 개발을 전담하여, 전체 서비스의 중추가 되는 API 설계 및 AI 모듈 연동 비즈니스 로직을 구축했습니다.
+
+1) AI 파이프라인 연동 및 비즈니스 로직 구현 (Django)
+기능 우선순위 설계: 유저 시나리오를 바탕으로 [음성 데이터 처리]가 선행되어야 [AI 요약]이 가능하다는 데이터 흐름적 근거를 수립, MVP의 핵심 백엔드 아키처를 설계했습니다.
+
+OpenAI API 연동: meetings/views.py에서 GPT-3.5-turbo 모델을 안정적으로 호출하고, 프롬프트 엔지니어링을 통해 회의 결과물이 4가지 축(회의 제목, 주요 이슈, 새로운 상황, 추가 안건)으로 구조화되어 클라이언트에 반환되도록 로직을 개발했습니다.
+
+2) 데이터 관리 및 보안 강화
+환경변수 분리: 구글 GCP 서비스 계정 키 및 OpenAI API 키 등 민감한 인증 정보를 소스코드에 하드코딩하지 않고, os.environ.get을 활용해 시스템 환경변수로 격리하여 보안 취약점을 사전에 방어했습니다.
+
+RESTful API 설계: 프론트엔드(New_KT-FE) 및 AI 모듈 간의 원활한 데이터 교환을 위해 직관적인 API 엔드포인트를 설계 및 제공했습니다.
